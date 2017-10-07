@@ -1,0 +1,3 @@
+#!/bin/sh
+F="Px437 IBM VGA9"
+xterm -fa "$F" -fs 22 -bg black -fg grey

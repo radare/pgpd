@@ -1,0 +1,19 @@
+#!/bin/sh
+xsetroot -solid black
+xrandr -o right
+setxkbmap en_US
+# xterm -bg black -fg grey -fn 10x20 &
+dwm-term &
+xbindkeys
+xsetroot -name pgpd
+(
+	while : ; do
+		a=`upower -i $(upower -e | grep battery) | grep perce | awk '{print $2}'`
+		d=`date`
+		xsetroot -name "$d $a"
+		sleep 60
+	done
+) &
+while : ; do
+dwm
+done
